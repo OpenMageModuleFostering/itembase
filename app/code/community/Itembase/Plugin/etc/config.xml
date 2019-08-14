@@ -11,17 +11,6 @@
                 <class>Itembase_Plugin_Block</class>
             </itembase>
         </blocks>
-        <events>
-            <checkout_onepage_controller_success_action>
-                <observers>
-                    <itembase_plugin_observer>
-                        <type>singleton</type>
-                        <class>Itembase_Plugin_Plugin</class>
-                        <method>displayPlugin</method>
-                    </itembase_plugin_observer>
-                </observers>
-            </checkout_onepage_controller_success_action>
-        </events>
         <helpers>
             <itembase_plugin>
                 <class>Mage_Core_Helper</class>
@@ -38,6 +27,13 @@
               </args>
            </itembase>
        </routers>
+       <layout>
+            <updates>
+                <itembase_plugin>
+                    <file>itembase.xml</file>
+                </itembase_plugin>                
+            </updates>
+        </layout>
     </frontend>
     <admin>
         <routers>

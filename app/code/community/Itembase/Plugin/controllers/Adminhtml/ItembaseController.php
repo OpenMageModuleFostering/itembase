@@ -142,6 +142,7 @@ class Itembase_Plugin_Adminhtml_ItembaseController extends Mage_Adminhtml_Contro
 						<input type="hidden" name="shops['.$shop['shop_id'].'][country]" value="'.$shop['country'].'" />
 						<input type="hidden" name="shops['.$shop['shop_id'].'][telephone]" value="'.$shop['telephone'].'" />
 						<input type="hidden" name="shops['.$shop['shop_id'].'][fax]" value="'.$shop['fax'].'" />
+						<input type="hidden" name="shops['.$shop['shop_id'].'][email]" value="'.$shop['email'].'" />
 					</div>';
 			}
 			$registrationHtml .= '

@@ -1,0 +1,22 @@
+<?php $this->productPlugin() ?>
+<script type="text/javascript" src="https://d3jaattgax33fv.cloudfront.net/js/jqplugin.js"></script>
+<script type="text/javascript" charset="utf-8">
+var $itembaseJq = jQuery;
+var $itembaseProductData = '<?php echo addslashes(json_encode($this->ibproductdata)) ?>';
+
+$itembaseJq(document).ready(function($itembaseJq) {
+	$itembaseJq('.product-collateral').append('<div id="itembasecontainer"></div>');
+	$itembaseJq.ajax({
+		data: {pluginVersion: '<?php echo $this->ibpluginversion ?>', productId: '<?php echo $this->ibproductdata['product']['id'] ?>'},
+		dataType: 'jsonp',
+		jsonp: 'ib_callback',
+		url: '<?php echo $this->ibembedserver ?>/embed/product/<?php echo $this->ibaccesstoken ?>/<?php echo $this->iblang ?>',
+		success: function (data) {
+			$itembaseJq('#itembasecontainer').html('');
+			$itembaseJq('#itembasecontainer').append(data.response);
+		}
+	});
+});
+
+jQuery.noConflict(true);
+</script>

@@ -1,19 +1,20 @@
+<?php $this->checkoutPlugin() ?>
 <script type="text/javascript" src="https://d3jaattgax33fv.cloudfront.net/js/jqplugin.js"></script>
 <script type="text/javascript" charset="utf-8">
 var $itembase_jq = jQuery;
 
 $itembase_jq(document).ready(function($itembase_jq) {
 
-	var ibEmbedHost = "<?php echo $ibembedserver ?>";
-	var ibHost = "<?php echo $ibhostserver ?>";
-	var ibData = <?php echo json_encode($ibdata) ?>;
+	var ibEmbedHost = "<?php echo $this->ibembedserver ?>";
+	var ibHost = "<?php echo $this->ibhostserver ?>";
+	var ibData = <?php echo json_encode($this->ibdata) ?>;
 
 	// Method to add click funcitonality
 	function addClickListener() {
 		$itembase_jq('#itembasecontainer .js-trackButton').click(function(event) {
 			if (!$itembase_jq(this).hasClass('disabled')) {
 				if ($itembase_jq('#itembase_data').length==0) {
-					$itembase_jq('#itembasecontainer').append('<form id="itembaseform" method="post" action="'+ibHost+'/api/add_to_my_collection" target="_blank"><textarea id="itembase_data" name="data"><?php echo addslashes(json_encode($ibdata)) ?></textarea><input type="submit" value="" cols="1" rows="1" style="width=1px;height:1px;visibility:hidden;" /></form>');
+					$itembase_jq('#itembasecontainer').append('<form id="itembaseform" method="post" action="'+ibHost+'/api/add_to_my_collection" target="_blank"><textarea id="itembase_data" name="data"><?php echo addslashes(json_encode($this->ibdata)) ?></textarea><input type="submit" value="" cols="1" rows="1" style="width=1px;height:1px;visibility:hidden;" /></form>');
 					};
 				document.getElementById('itembaseform').submit();
 				$itembase_jq('#itembase_data').hide();
@@ -83,10 +84,10 @@ $itembase_jq(document).ready(function($itembase_jq) {
 	// Method to load plugin data with JSONP
 	function refreshPluginData() {
 		$itembase_jq.ajax({
-			data: {pluginVersion: '<?php echo $ibpluginversion ?>'},
+			data: {pluginVersion: '<?php echo $this->ibpluginversion ?>'},
 			dataType: 'jsonp',
 			jsonp: 'ib_callback',
-			url: ibEmbedHost + '/embed/confirm/<?php echo $ibdata["access_token"] ?>/<?php echo $ibdata["lang"] ?>',
+			url: ibEmbedHost + '/embed/confirm/<?php echo $this->ibdata['access_token'] ?>/<?php echo $this->ibdata['lang'] ?>',
 			success: function (data) {
 				renderPlugin(data.response);
 				sendOrderData();
