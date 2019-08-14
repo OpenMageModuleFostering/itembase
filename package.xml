@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Itembase</name>
+    <version>2.0.0</version>
+    <stability>stable</stability>
+    <license>OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Itembase plugin</summary>
+    <description>Itembase plugin</description>
+    <notes>Stable release</notes>
+    <authors><author><name>Itembase</name><user>itembase</user><email>kg@itembase.biz</email></author></authors>
+    <date>2013-01-21</date>
+    <time>11:57:13</time>
+    <contents><target name="magecommunity"><dir name="Itembase"><dir name="Plugin"><dir name="Block"><file name="Plugin.php" hash="08bd54b8795873cc84f1c81b54e5bb1e"/><file name="Registrationlabel.php" hash="da1c9830449a1af6602b813ef2e8745b"/></dir><file name="Plugin.php" hash="d5028b5bff167bfdf31e483069553268"/><dir name="controllers"><dir name="Adminhtml"><file name="ItembaseController.php" hash="fd8f48a86e3bc068681d190ff95ed662"/></dir><file name="IndexController.php" hash="ab00d97f209a41b9dc4b95a20e539089"/></dir><dir name="etc"><file name="config.xml" hash="6f3844a88e13ee0f80ba0908a822548e"/><file name="system.xml" hash="b6c0852bc0d958b0e9c2aa1113476940"/></dir><file name="oauth.php" hash="e3a6b961c2ca1e2bc6a70a6a6ecb56b3"/><file name="plugindata.php" hash="4256b4c98b083ecac353c575cdcf8c7c"/></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Itembase_Plugin.xml" hash="31903842e872b0c72d24f6ee6b7fd390"/></dir></target><target name="magelocale"><dir><dir name="de_DE"><file name="Itembase_Plugin.csv" hash="fbcbb04e8ffb2b64e5d438628466f065"/></dir><dir name="en_US"><file name="Itembase_Plugin.csv" hash="0fead96374795d4b8e13b793b8186337"/></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="itembase"><file name="checkout_success.phtml" hash="8677044de3490ca3b8630e927c3ab4ba"/></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

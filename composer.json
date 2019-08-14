@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Itembase",
+    "type": "magento-module",
+    "license": "OSL-v3.0",
+    "homepage": "",
+    "description": "Itembase plugin",
+    "authors": [
+    {
+        "name": "Itembase",
+        "email": "kg@itembase.biz"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
